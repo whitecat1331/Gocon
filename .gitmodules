@@ -1,0 +1,3 @@
+[submodule "assetfinder"]
+	path = assetfinder
+	url = git@github.com:whitecat1331/assetfinder.git
