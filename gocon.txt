@@ -1,6 +1,0 @@
-zoom.com (FQDN) --> ns_record --> ns-1473.awsdns-56.org (FQDN)
-zoom.com (FQDN) --> ns_record --> ns-1861.awsdns-40.co.uk (FQDN)
-zoom.com (FQDN) --> ns_record --> ns-481.awsdns-60.com (FQDN)
-zoom.com (FQDN) --> ns_record --> ns-968.awsdns-57.net (FQDN)
-zoom.com (FQDN) --> mx_record --> mxa-00569201.gslb.pphosted.com (FQDN)
-zoom.com (FQDN) --> mx_record --> mxb-00569201.gslb.pphosted.com (FQDN)
