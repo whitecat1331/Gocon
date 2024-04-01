@@ -50,17 +50,6 @@ func activePing(domain string, count int, timeout int) bool {
 
 }
 
-func fetchSubjack(domains []string) []string {
-	var potentialTakeovers []string
-	for _, domain := range domains {
-		if Subjack(domain) {
-			potentialTakeovers = append(potentialTakeovers, domain)
-		}
-	}
-
-	return potentialTakeovers
-}
-
 func fetchActive(domains []string) []string {
 	return httprobe.HTTProbe(domains)
 }

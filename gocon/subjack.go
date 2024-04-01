@@ -27,4 +27,15 @@ func Subjack(subdomain string) bool {
 	}
 
 	return service != ""
+
+}
+func fetchSubjack(domains []string) []string {
+	var potentialTakeovers []string
+	for _, domain := range domains {
+		if Subjack(domain) {
+			potentialTakeovers = append(potentialTakeovers, domain)
+		}
+	}
+
+	return potentialTakeovers
 }
