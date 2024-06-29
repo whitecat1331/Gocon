@@ -2,18 +2,16 @@ package gocon
 
 import (
 	"context"
-	"fmt"
-	"log"
-
 	"github.com/Ullaakut/nmap/v3"
+	"log"
 )
 
-func Gomap(addresses []string) {
+func fetchNmap(addresses []string) *nmap.Run {
 	// Equivalent to
 	// nmap -sV -T4 192.168.0.0/24 with a filter to remove non-RTSP ports.
 	scanner, err := nmap.NewScanner(
 		context.Background(),
-		nmap.WithTargets(addresses),
+		nmap.WithTargets(addresses...),
 		nmap.WithPorts("80", "554", "8554"),
 		nmap.WithServiceInfo(),
 		nmap.WithTimingTemplate(nmap.TimingAggressive),
@@ -45,11 +43,6 @@ func Gomap(addresses []string) {
 		log.Fatalf("nmap scan failed: %v", err)
 	}
 
-	for _, host := range result.Hosts {
-		fmt.Printf("Host %s\n", host.Addresses[0])
+	return result
 
-		for _, port := range host.Ports {
-			fmt.Printf("\tPort %d open with RTSP service\n", port.ID)
-		}
-	}
 }

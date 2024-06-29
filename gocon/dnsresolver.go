@@ -40,14 +40,11 @@ func fetchDNSInfo(domain string, dns string) *DNSResolverInfo {
 	ip4, err := r.LookupIP(context.Background(), "ip4", domain)
 	if err != nil {
 		log.Println(err)
-		ip4 = []net.IP{}
-
 	}
 
 	ip6, err := r.LookupIP(context.Background(), "ip6", domain)
 	if err != nil {
 		log.Println(err)
-		ip6 = []net.IP{}
 	}
 
 	mx, err := r.LookupMX(context.Background(), domain)

@@ -1,8 +1,6 @@
-package subjack
+package main
 
-import (
-	"github.com/whitecat1331/gocon/gocon"
-)
+import ()
 
 func main() {
 }
